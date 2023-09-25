@@ -22,18 +22,18 @@ const StatsNumber = styled.p`
 
 type StatsProps = {
   name: string;
-  number: number;
+  value: number | string;
 };
 
 export const StatsCardContainer = styled.div`
   display: flex;
 `;
 
-export const StatsCard: React.FC<StatsProps> = ({ name, number }) => {
+export const StatsCard: React.FC<StatsProps> = ({ name, value }) => {
   return (
     <CardWrapper>
       <Title>{name}</Title>
-      <StatsNumber>{number}</StatsNumber>
+      <StatsNumber>{value}</StatsNumber>
     </CardWrapper>
   );
 };

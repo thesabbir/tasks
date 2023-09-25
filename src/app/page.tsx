@@ -14,13 +14,6 @@ export default function Home() {
       </Header>
 
       <Container>
-        <StatsCardContainer>
-          <StatsCard name="Total Tasks" number={100} />
-          <StatsCard name="Total Days" number={100} />
-          <StatsCard name="Total Hours" number={100} />
-        </StatsCardContainer>
-      </Container>
-      <Container>
         <Link href="/tasks">
           <Button>Manage Tasks</Button>
         </Link>
