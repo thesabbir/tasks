@@ -33,7 +33,7 @@ export const useTasks = () => {
    * @param task This the task object
    */
   const addTask = (task: TaskInput) => {
-    if (!task.title || task.title === '') {
+    if (!task.title || task.title === '' || task.title.length > 128) {
       throw new Error('invalid task title');
     }
     if (!Number.isInteger(task.hours) || task.hours === 0 || task.hours > 24) {

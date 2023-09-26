@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { confirmAlert } from 'react-confirm-alert';
@@ -17,7 +18,6 @@ import {
 } from '@/components/Table';
 import { TaskInput, useTasks } from '@/hooks/useTasks';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 export default function Tasks() {
   const { taskList, taskStats, addTask, deleteTask } = useTasks();

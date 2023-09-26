@@ -67,4 +67,27 @@ describe('hooks/useTasks', () => {
       expect(taskStats.totalDays).toBe(3);
     });
   });
+
+  test('it should be able to throw if the inputs are invalid', async () => {
+    const { result } = renderHook(() => useTasks());
+    const { addTask } = result.current;
+    try {
+      addTask({
+        title: 'Test task',
+        hours: 28,
+      });
+    } catch (e: any) {
+      expect(e).toBeDefined();
+      expect(e.message).toBe('invalid task hours');
+    }
+    try {
+      addTask({
+        title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+        hours: 20,
+      });
+    } catch (e: any) {
+      expect(e).toBeDefined();
+      expect(e.message).toBe('invalid task title');
+    }
+  });
 });
