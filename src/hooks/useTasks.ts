@@ -36,7 +36,7 @@ export const useTasks = () => {
     if (!task.title || task.title === '') {
       throw new Error('invalid task title');
     }
-    if (!task.hours || task.hours === 0 || !Number.isInteger(task.hours)) {
+    if (!Number.isInteger(task.hours) || task.hours === 0 || task.hours > 24) {
       throw new Error('invalid task hours');
     }
     const newTask: Task = {
