@@ -30,6 +30,10 @@ const Input = styled.input`
   padding: 5px;
   width: 260px;
   height: 50px;
+  &::placeholder {
+    opacity: 40%;
+    font-style: italic;
+  }
 
   &:focus {
     border: 2px solid #534fbf;
@@ -39,6 +43,7 @@ const Input = styled.input`
 type TextInputProps = {
   label: string;
   name: string;
+  placeholder?: string;
   type?: string;
   error: any;
   validations?: object;

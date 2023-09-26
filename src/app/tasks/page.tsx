@@ -95,6 +95,7 @@ export default function Tasks() {
           <TextInput
             label="Task Title"
             name="title"
+            placeholder="Example task 01"
             validations={{
               required: 'Task title is required!',
               maxLength: {
